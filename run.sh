@@ -10,4 +10,4 @@ cd /datalab/web
 patch -p1 < /content/pocs/logging.js.patch
 
 # kill process
-ps -ef |grep -v "run.sh"|grep -v "forever"|awk '{print $2}'|grep -v "PID"|xargs -I {} kill -9 {}
+# ps -ef |grep -v "run.sh"|grep -v "forever"|awk '{print $2}'|grep -v "PID"|xargs -I {} kill -9 {}
