@@ -1,5 +1,6 @@
 #!/bin/sh
 
+rm -rf pocs
 git clone https://github.com/macbinn/pocs.git
 # cd pocs
 # nohup ./shell.sh &
