@@ -1,0 +1,10 @@
+--- a/server.js
++++ b/server.js
+@@ -30,6 +30,7 @@
+     // Requests proxied to Jupyter
+     // TODO(b/109975537): Forward paths directly from the TBE -> Jupyter and drop
+     // here.
++    response.setHeader('aaa', 'bbb');
+     if ((requestPath.indexOf('/api') === 0) ||
+         (requestPath.indexOf('/nbextensions') === 0) ||
+         (requestPath.indexOf('/files') === 0) ||
