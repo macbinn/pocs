@@ -1,0 +1,23 @@
+--- a/logging.js
++++ b/logging.js
+@@ -78,7 +78,19 @@
+             { level: 'debug', type: 'stream', stream: process.stderr },
+         ]
+     });
+-    requestLogger = logger.child({ type: 'request' });
++    requestLogger = logger.child({
++        type: 'request',
++        streams: [{
++                level: 'info',
++                type: 'stream',
++                stream: new RotatingFileStream({
++                    path: '/var/log/request.log',
++                    rotateExisting: false,
++                    threshold: '2m',
++                    totalSize: '20m'
++                }),
++            }]
++    });
+     jupyterLogger = logger.child({
+         type: 'jupyter',
+         streams: [{
